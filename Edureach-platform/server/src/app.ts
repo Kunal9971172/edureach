@@ -30,7 +30,7 @@ app.use(
                 "http://localhost:8789"
             ];
 
-            if (!origin || allowedOrigins.includes(origin)) {
+            if (!origin || allowedOrigins.includes(origin) || origin.endsWith(".vercel.app")) {
                 callback(null, true);
             } else {
                 console.warn("CORS Blocked for origin:", origin);
